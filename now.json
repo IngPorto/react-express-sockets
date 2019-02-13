@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "react-express-sockets",
+  "builds": [
+      { "src": "*.html", "use": "@now/static" },
+      { "src": "*.png", "use": "@now/static" },
+      { "src": "*.ico", "use": "@now/static" },
+      { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+      { "src": "/custom-page", "headers": {"cache-control": "s-maxage=1000"}, "dest": "/public/index.html" },
+      { "src": "/", "dest": "./public/index.html" }
+  ]
+}
